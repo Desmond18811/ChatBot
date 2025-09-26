@@ -9,6 +9,10 @@ const app = express()
 app.use(cors())
 app.use(express.json())
 
+app.get('/', (req, res) => {
+    res.send('Hello and welcome to ChatGPT')
+})
+
 app.post('/api/chat', async(req, res) => {
     try {
         const { messages } = req.body
